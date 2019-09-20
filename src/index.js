@@ -1,15 +1,11 @@
-
-require('normalize.css/normalize.css');
 require('./styles/index.scss');
+import jquery from 'jquery';
 
-document.addEventListener("DOMContentLoaded", () => {
 
-    const pluginsTriggerElement = document.getElementById('plugins-trigger');
-    const pluginsElement = document.getElementById('plugins');
-
-    const pluginsVisibleClass = "splash-overview-plugins__list--visible";
-
-    pluginsTriggerElement.onclick = () => {
-        pluginsElement.classList.toggle(pluginsVisibleClass);
+jquery(() => {
+    if (window.location.search.indexOf('track=yes') > -1) {
+        alert('track present');
+    } else {
+        alert('track not here');
     }
 });
